@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>HISTORIC TRENDS DIO GM GROII</title>
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">   
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->   
+  </head>
+  <body>
+    <div class="container">
+      <div class="row logos">
+        <div class="col-md-3 col-sm-3 col-xs-3">  
+            <img class="img-responsive" src="img/intcomex-logo.jpg" alt="">
+        </div>
+        <div class="col-md-3 col-md-offset-6 col-sm-3 col-sm-offset-6 col-xs-3 col-xs-offset-">
+          <img src="img/header-logo.png" alt="" class="img-responsive">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12 col-sm-12 col-xs-12 sim-title text-center">
+          <h1>Análisis GMROII (Gross Margin Return On Invested Capital) <br>
+          <span style="color:#00b5eb">División de Negocios</span></h1>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <table class="table text-center">
+            <tr>
+              <td class="simulator-titles">Business Divisions</td>
+              <td class="simulator-titles">OH + RW</td>
+              <td class="simulator-titles">DIO</td>
+              <td class="simulator-titles">Daily Impact <br>OH + RW /DIO</td>
+              <td class="simulator-titles">Gross Margin <br>Weekly</td>
+              <td class="simulator-titles">GMROII <br>Weekly</td>
+              <td class="simulator-titles">Gross Margin <br>Monthly</td>
+              <td class="simulator-titles">GMROII <br>Monthly</td>
+              <td class="simulator-titles">Gross Margin <br>Quarterly</td>
+              <td class="simulator-titles">GMROII <br>Quarterly</td>
+            </tr>
+            <tr class="border-transparent">  
+              <td >Accesories</td>
+              <td><input type="number" class="ohwr4 ohwr a11 a22 " id="a1" placeholder="Ingresar valor" ></td>
+              <td><input type="number" class="dio4 dio a11 a33 a44" id="a2" placeholder="Ingresar valor" ></td>
+              <td><input type="number" class="di4 di" id="a3" placeholder="$"></td>
+              <td><input type="number" class="gmw4 a22 gmw" id="a4" placeholder="Ingresar valor" ></td>
+              <td><input type="number" class="gmwp4 gmwp" id="a5" placeholder="%"></td>
+              <td><input type="number" class="gmm4 a33 gmm" id="a6" placeholder="Ingresar valor" ></td>
+              <td><input type="number" class="gmmp4 gmmp" id="a7" placeholder="%"></td>
+              <td><input type="number" class="gmq4 a44 gmq" id="a8" placeholder="Ingresar valor" ></td>
+              <td><input type="number" class="gmqp4 gmqp" id="a9" placeholder="%"></td>
+            </tr>
+            <tr>  
+              <td>Security</td>
+              <td><input type="number" class="ohwr4 ohwr b11 b22" id="b1" placeholder="Ingresar valor" ></td>
+              <td><input type="number" class="dio4 dio b11 b33 b44" id="b2" placeholder="Ingresar valor" ></td>
+              <td><input type="number" class="di4 di" id="b3" placeholder="$"></td>
+              <td><input type="number" class="gmw4 gmw b22" id="b4" placeholder="Ingresar valor" ></td>
+              <td><input type="number" class="gmwp4 gmwp" id="b5" placeholder="%"></td>
+              <td><input type="number" class="gmm4 gmm b33" id="b6" placeholder="Ingresar valor" ></td>
+              <td><input type="number" class="gmmp4 gmmp" id="b7" placeholder="%"></td>
+              <td><input type="number" class="gmq4 gmq b44" id="b8" placeholder="Ingresar valor" ></td>
+              <td><input type="number" class="gmqp4 gmqp" id="b9" placeholder="%"></td>
+            </tr>
+            <tr>  
+              <td>Gaming</td>
+              <td><input type="number" class="ohwr4 ohwr c11 c22" id="c1" placeholder="Ingresar valor" ></td>
+              <td><input type="number" class="dio4 dio c11 c33 c44" id="c2" placeholder="Ingresar valor" ></td>
+              <td><input type="number" class="di4 di" id="c3" placeholder="$" ></td>
+              <td><input type="number" class="gmw4 gmw c22" id="c4" placeholder="Ingresar valor" ></td>
+              <td><input type="number" class="gmwp4 gmwp" id="c5" placeholder="%"></td>
+              <td><input type="number" class="gmm4 gmm c33" id="c6" placeholder="Ingresar valor" ></td>
+              <td><input type="number" class="gmmp4 gmmp" id="c7" placeholder="%"></td>
+              <td><input type="number" class="gmq4 gmq c44" id="c8" placeholder="Ingresar valor" ></td>
+              <td><input type="number" class="gmqp4 gmqp" id="c9" placeholder="%"></td>
+            </tr>
+            <tr>  
+              <td>P.O.S</td>
+              <td><input type="number" class="ohwr4 ohwr d11 d22" id="d1" placeholder="Ingresar valor" ></td>
+              <td><input type="number" class="dio4 dio d11 d33 d44" id="d2" placeholder="Ingresar valor" ></td>
+              <td><input type="number" class="di4 di" id="d3" placeholder="$" ></td>
+              <td><input type="number" class="gmw4 gmw d22" id="d4" placeholder="Ingresar valor" ></td>
+              <td><input type="number" class="gmwp4 gmwp" id="d5" placeholder="%"></td>
+              <td><input type="number" class="gmm4 gmm d33" id="d6" placeholder="Ingresar valor" ></td>
+              <td><input type="number" class="gmmp4 gmmp" id="d7" placeholder="%"></td>
+              <td><input type="number" class="gmq4 gmq d44" id="d8" placeholder="Ingresar valor" ></td>
+              <td><input type="number" class="gmqp4 gmqp" id="d9" placeholder="%"></td>
+            </tr>
+            <tr>  
+              <td class="simulator-titles">SPECIALIZED</td>
+              <td><input type="number" class="totals" id="e1" placeholder=""></td>
+              <td><input type="number" class="totals" id="e2" placeholder=""></td>
+              <td><input type="number" class="totals" id="e3" placeholder="" ></td>
+              <td><input type="number" class="totals" id="e4" placeholder=""></td>
+              <td><input type="number" class="totals" id="e5" placeholder=""></td>
+              <td><input type="number" class="totals" id="e6" placeholder=""></td>
+              <td><input type="number" class="totals" id="e7" placeholder=""></td>
+              <td><input type="number" class="totals" id="e8" placeholder=""></td>
+              <td><input type="number" class="totals" id="e9" placeholder=""></td>
+            </tr>
+            
+            <tr class="border-transparent">
+              <td class="simulator-titles">EXCLUSIVE</td>
+              <td><input type="number" class="ohwr4 f11 f22" id="f1" placeholder="Ingresar valor" ></td>
+              <td><input type="number" class="dio4 f11 f33 f44" id="f2" placeholder="Ingresar valor" ></td>
+              <td><input type="number" class="di4" id="f3" placeholder="$" ></td>
+              <td><input type="number" class="gmw4 f22" id="f4" placeholder="Ingresar valor" ></td>
+              <td><input type="number" class="gmwp4" id="f5" placeholder="%"></td>
+              <td><input type="number" class="gmm4 f33" id="f6" placeholder="Ingresar valor" ></td>
+              <td><input type="number" class="gmmp4" id="f7" placeholder="%"></td>
+              <td><input type="number" class="gmq4 f44" id="f8" placeholder="Ingresar valor" ></td>
+              <td><input type="number" class="gmqp4" id="f9" placeholder="%"></td>
+            </tr>
+
+            <tr class="border-transparent">
+              <td>Activation</td>
+              <td><input type="number" class="ohwr4 ohwr1 g11 g22" id="g1" placeholder="Ingresar valor" ></td>
+              <td><input type="number" class="dio4 dio1 g11 g33 g44" id="g2" placeholder="Ingresar valor" ></td>
+              <td><input type="number" class="di4 di1" id="g3" placeholder="$" ></td>
+              <td><input type="number" class="gmw4 gmw1 g22" id="g4" placeholder="Ingresar valor" ></td>
+              <td><input type="number" class="gmwp4 gmwp1" id="g5" placeholder="%"></td>
+              <td><input type="number" class="gmm4 gmm1 g33" id="g6" placeholder="Ingresar valor" ></td>
+              <td><input type="number" class="gmmp4 gmmp1" id="g7" placeholder="%"></td>
+              <td><input type="number" class="gmq4 gmq1 g44" id="g8" placeholder="Ingresar valor" ></td>
+              <td><input type="number" class="gmqp4 gmqp1" id="g9" placeholder="%"></td>
+            </tr>
+            
+            <tr>  
+              <td>Mobile</td>
+              <td><input type="number" class="ohwr4 ohwr1 h11 h22" id="h1" placeholder="Ingresar valor" ></td>
+              <td><input type="number" class="dio4 dio1 h11 h33 h44" id="h2" placeholder="Ingresar valor" ></td>
+              <td><input type="number" class="di4 di1" id="h3" placeholder="$" ></td>
+              <td><input type="number" class="gmw4 gmw1 h22" id="h4" placeholder="Ingresar valor" ></td>
+              <td><input type="number" class="gmwp4 gmwp1" id="h5" placeholder="%"></td>
+              <td><input type="number" class="gmm4 gmm1 h33" id="h6" placeholder="Ingresar valor" ></td>
+              <td><input type="number" class="gmmp4 gmmp1" id="h7" placeholder="%"></td>
+              <td><input type="number" class="gmq4 gmq1 h44" id="h8" placeholder="Ingresar valor" ></td>
+              <td><input type="number" class="gmqp4 gmqp1" id="h9" placeholder="%"></td>
+            </tr>
+            <tr>  
+              <td class="simulator-titles">MOBILE</td>
+              <td><input type="number" class="totals" id="i1"></td>
+              <td><input type="number" class="totals" id="i2" placeholder=""></td>
+              <td><input type="number" class="totals" id="i3" placeholder="" ></td>
+              <td><input type="number" class="totals" id="i4" placeholder=""></td>
+              <td><input type="number" class="totals" id="i5" placeholder=""></td>
+              <td><input type="number" class="totals" id="i6" placeholder=""></td>
+              <td><input type="number" class="totals" id="i7" placeholder=""></td>
+              <td><input type="number" class="totals" id="i8" placeholder=""></td>
+              <td><input type="number" class="totals" id="i9" placeholder=""></td>
+            </tr>
+
+            <tr class="border-transparent">         
+              <td>Networking</td>
+              <td><input type="number" class="ohwr4 ohwr2 j11 j22" id="j1" placeholder="Ingresar valor" ></td>
+              <td><input type="number" class="dio4 dio2 j11 j33 j44" id="j2" placeholder="Ingresar valor" ></td>
+              <td><input type="number" class="di4 di2" id="j3" placeholder="$" ></td>
+              <td><input type="number" class="gmw4 gmw2 j22" id="j4" placeholder="Ingresar valor" ></td>
+              <td><input type="number" class="gmwp4 gmwp2" id="j5" placeholder="%"></td>
+              <td><input type="number" class="gmm4 gmm2 j33" id="j6" placeholder="Ingresar valor" ></td>
+              <td><input type="number" class="gmmp4 gmmp2" id="j7" placeholder="%"></td>
+              <td><input type="number" class="gmq4 gmq2 j44" id="j8" placeholder="Ingresar valor" ></td>
+              <td><input type="number" class="gmqp4 gmqp2" id="j9" placeholder="%"></td>
+            </tr>
+            <tr>  
+              <td>Servers</td>
+              <td><input type="number" class="ohwr4 ohwr2 k11 k22" id="k1" placeholder="Ingresar valor" ></td>
+              <td><input type="number" class="dio4 dio2 k11 k33 k44" id="k2" placeholder="Ingresar valor" ></td>
+              <td><input type="number" class="di4 di2" id="k3" placeholder="$" ></td>
+              <td><input type="number" class="gmw4 gmw2 k22" id="k4" placeholder="Ingresar valor" ></td>
+              <td><input type="number" class="gmwp4 gmwp2" id="k5" placeholder="%"></td>
+              <td><input type="number" class="gmm4 gmm2 k33" id="k6" placeholder="Ingresar valor" ></td>
+              <td><input type="number" class="gmmp4 gmmp2" id="k7" placeholder="%"></td>
+              <td><input type="number" class="gmq4 gmq2 k44" id="k8" placeholder="Ingresar valor" ></td>
+              <td><input type="number" class="gmqp4 gmqp2" id="k9" placeholder="%"></td>
+            </tr>
+            <tr>  
+              <td class="simulator-titles">BROADLINE-VALUE</td>
+              <td><input type="number" class="totals" id="l1" placeholder=""></td>
+              <td><input type="number" class="totals" id="l2" placeholder=""></td>
+              <td><input type="number" class="totals" id="l3" placeholder="" ></td>
+              <td><input type="number" class="totals" id="l4" placeholder=""></td>
+              <td><input type="number" class="totals" id="l5" placeholder=""></td>
+              <td><input type="number" class="totals" id="l6" placeholder=""></td>
+              <td><input type="number" class="totals" id="l7" placeholder=""></td>
+              <td><input type="number" class="totals" id="l8" placeholder=""></td>
+              <td><input type="number" class="totals" id="l9" placeholder=""></td>
+            </tr>
+             <tr class="border-transparent">  
+              <td class="simulator-titles">BROADLINE-SOFTWARE</td>
+              <td><input type="number" class="ohwr4 m11 m22" id="m1" placeholder="Ingresar valor" ></td>
+              <td><input type="number" class="dio4 m11 m33 m44" id="m2" placeholder="Ingresar valor" ></td>
+              <td><input type="number" class="di4" id="m3" placeholder="$" ></td>
+              <td><input type="number" class="gmw4 m22" id="m4" placeholder="Ingresar valor" ></td>
+              <td><input type="number" class="gmwp4" id="m5" placeholder="%"></td>
+              <td><input type="number" class="gmm4 m33" id="m6" placeholder="Ingresar valor" ></td>
+              <td><input type="number" class="gmmp4" id="m7" placeholder="%"></td>
+              <td><input type="number" class="gmq4 m44" id="m8" placeholder="Ingresar valor" ></td>
+              <td><input type="number" class="gmqp4" id="m9" placeholder="%"></td>
+            </tr>
+             <tr class="border-transparent">  
+              <td>C.E</td>
+              <td><input type="number" class="ohwr4 ohwr3 n11 n22" id="n1" placeholder="Ingresar valor" ></td>
+              <td><input type="number" class="dio4 dio3 n11 n33 n44" id="n2" placeholder="Ingresar valor" ></td>
+              <td><input type="number" class="di4 di3" id="n3" placeholder="$" ></td>
+              <td><input type="number" class="gmw4 gmw3 n22" id="n4" placeholder="Ingresar valor" ></td>
+              <td><input type="number" class="gmwp4 gmwp3" id="n5" placeholder="%" ></td>
+              <td><input type="number" class="gmm4 gmm3 n33" id="n6" placeholder="Ingresar valor" ></td>
+              <td><input type="number" class="gmmp4 gmmp3" id="n7" placeholder="%" ></td>
+              <td><input type="number" class="gmq4 gmq3 n44" id="n8" placeholder="Ingresar valor" ></td>
+              <td><input type="number" class="gmqp4 gmqp3" id="n9" placeholder="%" ></td>
+            </tr>
+            <tr>  
+              <td>OEM</td>
+              <td><input type="number" class="ohwr4 ohwr3 o11 o22" id="o1" placeholder="Ingresar valor" ></td>
+              <td><input type="number" class="dio4 dio3 o11 o33 o44" id="o2" placeholder="Ingresar valor" ></td>
+              <td><input type="number" class="di4 di3" id="o3" placeholder="$" ></td>
+              <td><input type="number" class="gmw4 gmw3 o22" id="o4" placeholder="Ingresar valor" ></td>
+              <td><input type="number" class="gmwp4 gmwp3" id="o5" placeholder="%"></td>
+              <td><input type="number" class="gmm4 gmm3 o33" id="o6" placeholder="Ingresar valor" ></td>
+              <td><input type="number" class="gmmp4 gmmp3" id="o7" placeholder="%"></td>
+              <td><input type="number" class="gmq4 gmq3 o44" id="o8" placeholder="Ingresar valor" ></td>
+              <td><input type="number" class="gmqp4 gmqp3" id="o9" placeholder="%"></td>
+            </tr>
+            <tr>  
+              <td>PERIPHERALS</td>
+              <td><input type="number" class="ohwr4 ohwr3 p11 p22" id="p1" placeholder="Ingresar valor" ></td>
+              <td><input type="number" class="dio4 dio3 p11 p33 p44" id="p2" placeholder="Ingresar valor" ></td>
+              <td><input type="number" class="di4 di3" id="p3" placeholder="$" ></td>
+              <td><input type="number" class="gmw4 gmw3 p22" id="p4" placeholder="Ingresar valor" ></td>
+              <td><input type="number" class="gmwp4 gmwp3" id="p5" placeholder="%"></td>
+              <td><input type="number" class="gmm4 gmm3 p33" id="p6" placeholder="Ingresar valor" ></td>
+              <td><input type="number" class="gmmp4 gmmp3" id="p7" placeholder="%"></td>
+              <td><input type="number" class="gmq4 gmq3 p44" id="p8" placeholder="Ingresar valor" ></td>
+              <td><input type="number" class="gmqp4 gmqp3" id="p9" placeholder="%"></td>
+            </tr>
+            <tr>  
+              <td>CONSUMABLES</td>
+              <td><input type="number" class="ohwr4 ohwr3 q11 q22" id="q1" placeholder="Ingresar valor" ></td>
+              <td><input type="number" class="dio4 dio3 q11 q33 q44" id="q2" placeholder="Ingresar valor" ></td>
+              <td><input type="number" class="di4 di3" id="q3" placeholder="$" ></td>
+              <td><input type="number" class="gmw4 gmw3 q22" id="q4" placeholder="Ingresar valor" ></td>
+              <td><input type="number" class="gmwp4 gmwp3" id="q5" placeholder="%"></td>
+              <td><input type="number" class="gmm4 gmm3 q33" id="q6" placeholder="Ingresar valor" ></td>
+              <td><input type="number" class="gmmp4 gmmp3" id="q7" placeholder="%"></td>
+              <td><input type="number" class="gmq4 gmq3 q44" id="q8" placeholder="Ingresar valor" ></td>
+              <td><input type="number" class="gmqp4 gmqp3" id="q9" placeholder="%"></td>
+            </tr>
+            <tr>  
+              <td>PRINTING</td>
+              <td><input type="number" class="ohwr4 ohwr3 r11 r22" id="r1" placeholder="Ingresar valor" ></td>
+              <td><input type="number" class="dio4 dio3 r11 r33 r44" id="r2" placeholder="Ingresar valor" ></td>
+              <td><input type="number" class="di4 di3" id="r3" placeholder="$" ></td>
+              <td><input type="number" class="gmw4 gmw3 r22" id="r4" placeholder="Ingresar valor" ></td>
+              <td><input type="number" class="gmwp4 gmwp3" id="r5" placeholder="%"></td>
+              <td><input type="number" class="gmm4 gmm3 r33" id="r6" placeholder="Ingresar valor" ></td>
+              <td><input type="number" class="gmmp4 gmmp3" id="r7" placeholder="%"></td>
+              <td><input type="number" class="gmq4 gmq3 r44" id="r8" placeholder="Ingresar valor" ></td>
+              <td><input type="number" class="gmqp4 gmqp3" id="r9" placeholder="%"></td>
+            </tr>
+            <tr>  
+              <td>SYSTEM</td>
+              <td><input type="number" class="ohwr4 ohwr3 s11 s22" id="s1" placeholder="Ingresar valor" ></td>
+              <td><input type="number" class="dio4 dio3 s11 s33 s44" id="s2" placeholder="Ingresar valor" ></td>
+              <td><input type="number" class="di4 di3" id="s3" placeholder="$" ></td>
+              <td><input type="number" class="gmw4 gmw3 s22" id="s4" placeholder="Ingresar valor" ></td>
+              <td><input type="number" class="gmwp4 gmwp3" id="s5" placeholder="%"></td>
+              <td><input type="number" class="gmm4 gmm3 s33" id="s6" placeholder="Ingresar valor" ></td>
+              <td><input type="number" class="gmmp4 gmmp3" id="s7" placeholder="%"></td>
+              <td><input type="number" class="gmq4 gmq3 s44" id="s8" placeholder="Ingresar valor" ></td>
+              <td><input type="number" class="gmqp4 gmqp3" id="s9" placeholder="%"></td>
+            </tr>            
+            <tr>  
+              <td class="simulator-titles">BROADLINE-VOLUME</td>
+              <td><input type="number" class="totals" id="t1" placeholder=""></td>
+              <td><input type="number" class="totals" id="t2" placeholder=""></td>
+              <td><input type="number" class="totals" id="t3" placeholder="" ></td>
+              <td><input type="number" class="totals" id="t4" placeholder=""></td>
+              <td><input type="number" class="totals" id="t5" placeholder=""></td>
+              <td><input type="number" class="totals" id="t6" placeholder=""></td>
+              <td><input type="number" class="totals" id="t7" placeholder=""></td>
+              <td><input type="number" class="totals" id="t8" placeholder=""></td>
+              <td><input type="number" class="totals" id="t9" placeholder=""></td>
+            </tr>
+            
+            <tr class="border-transparent">  
+              <td class="simulator-titles">TOTAL</td>
+              <td><input type="number" class="totals" id="u1" placeholder=""></td>
+              <td><input type="number" class="totals" id="u2" placeholder=""></td>
+              <td><input type="number" class="totals" id="u3" placeholder="" ></td>
+              <td><input type="number" class="totals" id="u4" placeholder=""></td>
+              <td><input type="number" class="totals" id="u5" placeholder=""></td>
+              <td><input type="number" class="totals" id="u6" placeholder=""></td>
+              <td><input type="number" class="totals" id="u7" placeholder=""></td>
+              <td><input type="number" class="totals" id="u8" placeholder=""></td>
+              <td><input type="number" class="totals" id="u9" placeholder=""></td>
+            </tr>
+          </table>
+        </div>
+        <div class="row" style="margin-bottom: 40px;">
+          <div class="col-md-2 col-md-offset-5">
+            <form>  
+              <input type="button" class="btn btn-danger btn-lg" name="imprimir" value="Imprimir" onclick="window.print();">
+            </form>
+          </div>
+        </div>
+      </div>    
+    </div>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include indivclass="" idual files as needed -->
+    <script src="js/jQuery.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>
+

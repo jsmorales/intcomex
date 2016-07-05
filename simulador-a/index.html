@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Suplidor Análisis Retorno de Capital Invertido</title>
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">   
+     <link href="css/ajustes.css" rel="stylesheet">   
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->   
+  </head>
+  <body>
+    <div class="container">
+      <div class="row logos">
+        <div class="col-md-3 col-xs-3">  
+            <img class="img-responsive" src="img/intcomex-logo.jpg" alt="">
+        </div>
+        <div class="col-md-3 col-md-offset-6 col-xs-3 col-xs-offset-6">
+          <img src="img/header-logo.png" alt="" class="img-responsive">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12 col-xs-12 sim-title text-center">
+          <h1>SUPLIDOR</h1>
+        </div>
+      </div>
+      <!-- GROSS PROFIT BLOCK --> 
+      <div class="row">        
+        <div class="col-md-6 col-xs-6 col-md-offset-3 card" style="background: linear-gradient(#002d80 20%, #fff 0);">
+          <tbody>
+            <table class="table table-card">
+            <h2 class="card-title text-center">VENTAS - MARGEN</h2>            
+              <tr>
+                <td>Ingresos de Ventas</td>
+                <td colspan="2">$ <input type="text" id="sales_revenue" style="width: 95%"> $ <input type="text" id="sales_revenue_mask" style="width: 95%"></td>                
+              </tr>
+              <tr>  
+                <td>Front-End</td>
+                <td>
+                <label for=""> Utilidad FE</label><br>
+                $ <input type="number" id="resultado" disabled style="width: 80%"></td>
+                <td>
+                <label for=""> Margen FE</label><br>
+                % <input type="number" id="fmp" style="width: 88%"></td>
+              </tr>
+              <tr>
+                <td>Back-End</td>
+                <td>
+                <label for=""> Utilidad BE</label><br>
+                $ <input type="number" id="resultado_bk" disabled style="width: 88%"></td>
+                <td>
+                <label for=""> Margen BE</label><br>
+                 % <input type="number" id="backend-margin"  style="width: 88%"></td>
+              </tr>
+              <tr>
+                <td class="d-title">TOTAL</td>
+                <td>
+                <label for=""> Utilidad Bruta</label><br>
+                $ <input type="number" id="res_tot" disabled style="width: 88%"></td>
+                <td>
+                <label for=""> Margen Bruto</label><br>
+                % <input type="number" id="resultado_per" disabled style="width: 88%"></td>
+              </tr>              
+            </table>
+          </tbody>
+        </div>
+        <!-- END GROSS PROFIT BLOCK --> 
+        <div class="col-md-6 col-xs-6 copy margin-left" style="display:none">
+          <h2>COMERCIAL </h2>
+          <p>Ingresar la siguiente información:</p>
+          <ul>
+            <li>Ingresos de Ventas $ / Ventas $</li>
+            <li>Costos de Personal</li>
+            <li>Términos de Días de Pagos al Suplidor</li>
+            <li>Días de Inventario Estimados</li>
+            <li>Promedio de Días de Cuentas por Cobrar</li>
+          </ul>
+        </div>
+      </div>
+      <!-- TOTAL DIRECT COST BLOCK-->
+      <div class="row" style="margin-top:50px;">
+        <div class="col-md-6 col-xs-6 card card-2">
+          <tbody>
+            <table class="table table-card">
+            <h2 class="card-title text-center">Costos</h2>            
+            <tr>
+              <td>Recursos Corporativos Dedicados(PMs) Salario Completo</td>
+              <td colspan="2">$ <input type="number" id="dcr" style="width: 96%"></td>
+            </tr>
+            <tr>
+              <td>Recursos Locales Dedicados (PMs) Salario Completo</td>
+              <td colspan="2">$ <input type="number" id="dlr" style="width: 96%"></td>
+            </tr>
+            <tr>
+              <td>Costos Directos Adicionales por Personal (%)</td>
+              <td>$ <input type="number" id="adcp" disabled style="width: 88%"></td>
+              <td>% <input type="number" id="adcp_percentage" style="width: 88%"></td>
+            </tr>
+            <tr>
+              <td>Vendor Funding <br> <span style="font-size:10px;">(Agregue un Valor Negativo)</span></td>
+              <td colspan="2">$ <input type="number" id="vendor_funding" style="width:96%; "></td>
+            </tr>
+            <tr>
+              <td class="d-title">Total</td>
+              <td>
+              <label for=""> Costos Directos</label><br>
+              $ <input type="number" id="tdc" disabled style="max-width:88%"></td>
+              <td>
+              <label for=""> En % sobre Venta</label><br>
+              % <input type="number" id="tdcPercent" disabled style="max-width:88%"></td>
+            </tr>              
+          </table>
+          </tbody>          
+        </div>
+        <!-- END TOTAL DIRECT COST BLOCK-->
+        <div class="col-md-6 col-xs-6 margin-left" style="width: 48%">
+          <h2 class="card-title text-center" style="margin-bottom: 40px;margin-top:0px;background-color: #002d80; padding:30px;" >ANUALES</h2>    
+          <div class="row margin-bottom card-h" style="max-height:73px;">            
+            <table class="table">                 
+                <tr>
+                  <td class="tb-title" style="vertical-align: middle;">Contribución</td>
+                  <td>
+                  <label for=""> Utilidad</label><br>
+                  $ <input type="number" id="cont_mar" disabled style="margin-top:7px;width: 88%"></td>
+                  <td>
+                  <label for=""> Margen Contribución</label><br>
+                  % <input type="number" id="contribMarPer" disabled style="margin-top:7px;width: 88%"></td>
+                </tr>       
+                        
+            </table>
+          </div>
+          <div class="row margin-bottom card-h" style="max-height:80px;">
+            <table class="table">
+              <tr>
+                <td class="tb-title">Costos Fijos Asignados</td>
+                <td>
+                <label for="">Costos Fijos</label><br>
+                $ <input type="number" id="fca" disabled style="margin-top:14px;width:88%""></td>
+                <td>
+                <label for="">% Sobre Venta</label><br>
+                % <input type="number" id="fcaPer" style="margin-top:14px;width:88%""></td>
+              </tr>
+            </table>
+          </div>
+          <div class="row margin-bottom card-h">
+            <table class="table">
+              <tr>
+                <td class="tb-title">Proforma Operating Income</td>
+                <td>$ <input type="number" id="poi" disabled style="margin-top:14px;width:88%""></td>
+                <td>% <input type="number" id="poiPer" disabled style="margin-top:14px;width:89%"></td>
+              </tr>      
+            </table>
+          </div>
+        </div>
+      </div>
+      <div class="row" style="margin-top:50px;">
+        <div class="col-md-6 col-xs-6 card card-3">
+          <tbody>
+            <table class="table table-card">  
+            <tr>
+              <td class="text-right">DPO <br><span style="font-size:10px;">(Días de Pago)</span></td>
+              <td colspan="2"><input type="number" id="dpo" placeholder="Enter a value" style="width: 100%"></td>
+            </tr>
+            <tr>
+              <td class="text-right">DIO <br><span style="font-size:10px;">(Días de Inventario)</span></td>
+              <td colspan="2"><input type="number" id="dio" placeholder="Enter a value" style="width: 100%"></td>
+            </tr>
+            <tr>
+              <td class="text-right">DSO <br><span style="font-size:10px;">(Días de Cobro)</span></td>
+              <td colspan="2"><input type="number" id="dso" placeholder="Enter a value" style="width: 100%"></td>
+            </tr>
+            <tr>
+              <td class="d-title">CCC<br><span style="font-size:10px;">(Cash Conversion Cycle)</span></td>
+              <td colspan="2"><input type="number" id="wcd" disabled style="width: 100%"></td>
+            </tr>
+          </table>
+        </tbody>
+        </div>
+        <div class="col-md-6 col-xs-6 card card-3 margin-left">
+          <div class="col-md-12 col-xs-12">
+            <tbody>
+              <table class="table table-card">  
+              <tr>
+                <td>
+                  <a data-container="body" data-toggle="popover" data-trigger="hover" data-placement="right" data-html="true" data-content="<div style='font-size: 12px;text-align:center'><span style='text-decoration:underline; padding-bottom:5px;'>Ingresos - Front-End  </span> * DPO<br/> 360</div>" style="color: #9f2428;">Cuentas por Pagar</a>
+                </td>
+                <td>$ <input type="number" id="acc_pay" disabled></td>
+              </tr>
+              <tr>
+                <td>
+                  <a data-container="body" data-toggle="popover" data-trigger="hover" data-placement="right" data-html="true" data-content="<div style='font-size: 12px;text-align:center'><span style='text-decoration:underline; padding-bottom:5px;'>Ingresos - Utilidad Bruta  </span> * DIO<br/> 360</div>" style="color: #9f2428;">Días de Inventario</a>
+                </td>
+                <td>$ <input type="number" id="inv" disabled></td>
+              </tr>
+              <tr>
+                <td>
+                  <a data-container="body" data-toggle="popover" data-trigger="hover" data-placement="right" data-html="true" data-content="<div style='font-size: 12px;text-align:center'><span style='text-decoration:underline; padding-bottom:5px;'>Ingresos de Ventas</span> * DSO<br/> 360</div>" style="color:#9f2428;">Cuentas por Cobrar</a>
+                </td>
+                <td>$ <input type="number" id="acc_rec" disabled></td>
+              </tr>
+              <tr>
+                <td>Promedio Capital de Trabajo</td>
+                <td>$ <input type="number" id="av_inv_cap" disabled></td>
+              </tr>
+            </table>
+          </tbody>
+        </div>
+        </div>        
+      </div>
+      <div class="row" style="margin-top:50px;margin-bottom: 100px;">
+        <div class="col-md-4 col-xs-4">
+          <div class="row" style="background: #fff;max-height: 44px;">            
+             <table class="table">
+              <tr>
+                <td class="tb-title">Impuestos</td>
+                <td>$ <input type="number" id="taxes" disabled style="width: 130px;"></td>
+                <td>% <input type="number" id="taxes_per" style="max-width: 50px;"></td>
+              </tr>
+              </table>            
+          </div>
+          <div class="row" id="nopat" style="margin-top: 20px;background-color: white;max-height: 43px;">            
+              <table class="table">
+              <tr>
+              <td class="tb-title">
+                <a class="formulas" class="btn btn-default" data-container="body" data-toggle="popover" data-trigger="hover" data-placement="bottom" data-html="true" data-content="<div style='font-size: 12px;text-align:center'><span style='text-decoration:underline; padding-bottom:5px;'>Proforma Operating Income </span><br/> Taxes</div>">
+                  Proforma NOPAT
+                </a>
+              </td>
+              <td colspan="2">$ <input type="number" id="pro" disabled></td>
+              </tr>            
+              </table>
+          </div>
+        </div>
+        <div class="col-md-4 col-xs-4 card-h-2" style="">
+          <div class="row">            
+              <table class="table">
+              <tr>
+                <td class="tb-title">
+                  <a class="formulas" data-container="body" data-toggle="popover" data-trigger="hover" data-placement="bottom" data-html="true" data-content="<div style='font-size: 12px;text-align:center'><span style='text-decoration:underline; padding-bottom:5px;'>(Utilidad Operativa - Impuestos)</span><br/> Capital Invertido</div>">
+                    ROIC
+                  </a>
+                </td>
+                <td>% <input type="number" id="roic" disabled style="width: 88%"></td>
+              </tr>            
+              </table>
+          </div>
+          <div class="row card-h-2">            
+              <table class="table">
+              <tr>
+                <td class="tb-title">
+                  <a class="formulas" class="btn btn-default" data-container="body" data-toggle="popover" data-trigger="hover" data-placement="bottom" data-html="true" data-content="<div style='font-size: 12px;text-align:center'><span style='text-decoration:underline; padding-bottom:5px;'>%Proforma Operating Income * 175 </span><br/> CCC</div> ">
+                    ROIC Operativo
+                  </a>
+                </td>
+                <td>% <input type="number" id="roic_proxi" disabled style="width: 88%"></td>
+              </tr>            
+              </table>              
+          </div>
+        </div>
+        <div class="col-md-4 col-xs-4 card-h-2" style="display:none:">          
+          <div class="row">
+            <table class="table">
+            <tr>
+              <td class="tb-title">
+                <a class="formulas" class="btn btn-default" data-container="body" data-toggle="popover" data-trigger="hover" data-placement="bottom" data-html="true" data-content="<div style='font-size: 12px;text-align:center'><span style='text-decoration:underline; padding-bottom:5px;'>GrossProfit</span><br/> Inventory</div>">
+                  GMROII
+                </a>              
+              </td>
+              <td>% <input type="number" id="gmroi" disabled style="width: 88%"></td>
+            </tr>  
+            </table>        
+          </div>  
+          <div class="row card-h-2">
+            <table class="table">
+            <tr>
+              <td class="tb-title">
+                <a class="formulas" class="btn btn-default" data-container="body" data-toggle="popover" data-trigger="hover" data-placement="bottom" data-html="true" data-content="<div style='font-size: 12px;text-align:center'><span style='text-decoration:underline; padding-bottom:5px;'>GrossProfit</span><br/>  Average Invested Capital</div>">
+                  GMROWC
+                </a>
+             </td>
+              <td>% <input type="number" id="gmrowc" disabled style="width: 88%"></td>
+            </tr>
+            </table>
+          </div>
+
+        </div>        
+      </div> 
+      <div class="row" style="margin-bottom: 80px;">
+        <div class="col-md-2 col-md-offset-5 col-xs-2 col-xs-offset-5">
+          <form>
+            <input type="button" class="btn btn-danger" name="imprimir" value="Imprimir Documento" onclick="window.print();">
+          </form>
+        </div>
+      </div>     
+    </div>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/numeral.js/1.4.5/numeral.min.js"></script>
+    <script src="js/mascara.js"></script>
+    <script src="../js/jquery.mask.js"></script>
+    <script>
+      $(function () {
+        $('[data-toggle="popover"]').popover({title: 'Fórmula:', trigger: 'hover'})
+      })
+    </script>
+  </body>
+</html>
+
