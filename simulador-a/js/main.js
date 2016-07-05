@@ -6,17 +6,24 @@ document.getElementById("sales_revenue").onkeyup = function(){
 };
 
 document.getElementById("fmp").onkeyup = frontMargin;
+
 function frontMargin () {
 	var f1 = document.getElementById("sales_revenue").value;
 	var f2 = ((document.getElementById("fmp").value)/100);
 	
 	var r1= f1*f2;
+	//------------------------------------------------------
 	document.getElementById("resultado").value=r1.toFixed();
+	//------------------------------------------------------
+	$("#resultado_mask").val(r1.toFixed());
+	$("#resultado_mask").formatCurrency({roundToDecimalPlace:0,symbol:'',digitGroupSymbol:'.'});
+	//------------------------------------------------------
 	grossProfit();	
 	sumPercent();
 }
 
 document.getElementById("backend-margin").onkeyup = backMargin;
+
 function backMargin(){
 	var b1 = document.getElementById("sales_revenue").value;
 	var b2 = (document.getElementById("backend-margin").value)/100;

@@ -40,13 +40,18 @@
             <h2 class="card-title text-center">VENTAS - MARGEN</h2>            
               <tr>
                 <td>Ingresos de Ventas</td>
-                <td colspan="2">$ <input type="text" id="sales_revenue" style="width: 95%"> $ <input type="text" id="sales_revenue_mask" style="width: 95%"></td>                
+                <td colspan="2">
+                  $ <input type="text" id="sales_revenue" style="width: 95%"> 
+                  $ <input type="text" id="sales_revenue_mask" style="width: 95%">
+                </td>                
               </tr>
               <tr>  
                 <td>Front-End</td>
                 <td>
-                <label for=""> Utilidad FE</label><br>
-                $ <input type="number" id="resultado" disabled style="width: 80%"></td>
+                  <label for=""> Utilidad FE</label><br>
+                  $ <input type="text" id="resultado" disabled style="width: 80%"><br>
+                  $ <input type="text" id="resultado_mask" disabled style="width: 80%">
+                </td>
                 <td>
                 <label for=""> Margen FE</label><br>
                 % <input type="number" id="fmp" style="width: 88%"></td>
@@ -309,6 +314,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/numeral.js/1.4.5/numeral.min.js"></script>
     <script src="js/mascara.js"></script>
     <script src="../js/jquery.mask.js"></script>
+    <script src="../js/jquery.formatCurrency-1.4.0.min.js"></script>
     <script>
       $(function () {
         $('[data-toggle="popover"]').popover({title: 'Fórmula:', trigger: 'hover'})
