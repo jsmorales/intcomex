@@ -1,4 +1,4 @@
-// GROSS PROFIT 
+// GROSS PROFIT
 document.getElementById("sales_revenue").onkeyup = function(){
 	frontMargin();
 	backMargin();
@@ -10,7 +10,7 @@ document.getElementById("fmp").onkeyup = frontMargin;
 function frontMargin () {
 	var f1 = document.getElementById("sales_revenue").value;
 	var f2 = ((document.getElementById("fmp").value)/100);
-	
+
 	var r1= f1*f2;
 	//------------------------------------------------------
 	document.getElementById("resultado").value=r1.toFixed();
@@ -18,7 +18,7 @@ function frontMargin () {
 	$("#resultado_mask").val(r1.toFixed());
 	$("#resultado_mask").formatCurrency({roundToDecimalPlace:0,symbol:'',digitGroupSymbol:'.'});
 	//------------------------------------------------------
-	grossProfit();	
+	grossProfit();
 	sumPercent();
 }
 
@@ -30,7 +30,11 @@ function backMargin(){
 
 	var r2= b1*b2;
 	document.getElementById("resultado_bk").value=r2.toFixed();
-	grossProfit();	
+	//---------------------------------------------------------
+	$("#resultado_bk_mask").val(r2.toFixed());
+	$("#resultado_bk_mask").formatCurrency({roundToDecimalPlace:0,symbol:'',digitGroupSymbol:'.'});
+	//---------------------------------------------------------
+	grossProfit();
 	sumPercent();
 }
 
@@ -39,29 +43,33 @@ function grossProfit() {
 	var c2= document.getElementById("resultado_bk").value;
 
 	if (c1 == 0 && c2 == 0){
-		var res_tot = document.getElementById("sales_revenue").value;	
-	}	
+		var res_tot = document.getElementById("sales_revenue").value;
+	}
 	else{
 		var res_tot= (parseInt(c1)+parseInt(c2));
 
 	}
-	document.getElementById("res_tot").value=res_tot;	
+	document.getElementById("res_tot").value=res_tot;
+	//-----------------------------------------------
+	$("#res_tot_mask").val(res_tot);
+	$("#res_tot_mask").formatCurrency({roundToDecimalPlace:0,symbol:'',digitGroupSymbol:'.'});
+	//-----------------------------------------------
 }
 
 function sumPercent() {
 	if (document.getElementById("fmp").value == "") {
 		var p1 = parseInt(0);
 	}else {
-		var p1= document.getElementById("fmp").value; 		
-	}  
-
-	if (document.getElementById("backend-margin").value == "") {  
-	    var p2= parseInt(0);  
-	}else{
-		var p2= document.getElementById("backend-margin").value;    
+		var p1= document.getElementById("fmp").value;
 	}
-	var perc_tot= (parseFloat(p1)+parseFloat(p2));  
-	document.getElementById("resultado_per").value=perc_tot.toFixed(1);   	
+
+	if (document.getElementById("backend-margin").value == "") {
+	    var p2= parseInt(0);
+	}else{
+		var p2= document.getElementById("backend-margin").value;
+	}
+	var perc_tot= (parseFloat(p1)+parseFloat(p2));
+	document.getElementById("resultado_per").value=perc_tot.toFixed(1);
 }
 
 
@@ -75,59 +83,59 @@ document.getElementById("dcr").onkeyup = function () {
 
 document.getElementById("dlr").onkeyup = addCostPP;
 document.getElementById("adcp_percentage").onkeyup = addCostPP;
-function addCostPP() {	
-	if (document.getElementById("dcr").value == "") {			
+function addCostPP() {
+	if (document.getElementById("dcr").value == "") {
 		var dcr = 0;
 	}else {
 		var dcr = document.getElementById("dcr").value;
 	}
 
-	if (document.getElementById("dlr").value == "") {		
+	if (document.getElementById("dlr").value == "") {
 		var dlr = 0;
 	}else {
 		var dlr = document.getElementById("dlr").value;
 	}
 
-	var d1= (parseInt(dcr)+ parseInt(dlr));	
-	
+	var d1= (parseInt(dcr)+ parseInt(dlr));
+
 	if (document.getElementById("adcp_percentage").value === "") {
 		var d2= parseInt(0);
-	}else{	
+	}else{
 		var d2= (document.getElementById("adcp_percentage").value)/100;
 	}
 
 	var dtotal = d1*d2;
 	document.getElementById("adcp").value=dtotal;
 
-	totalDirectCost();	
+	totalDirectCost();
 	tdcPercent();
 	contribMargin();
 	contribMarPer();
 	fixedCA();
-	
+
 }
 
 
 document.getElementById("vendor_funding").onkeyup = addCostPP;
 function totalDirectCost(){
- 	
+
 	if (document.getElementById("dcr").value === "") {
 		var tdc1 = parseInt(0);
 	}else {
-		var tdc1 = parseInt(document.getElementById("dcr").value); 			
+		var tdc1 = parseInt(document.getElementById("dcr").value);
 	}
- 	
+
  	if (document.getElementById("dlr").value === "") {
  		var tdc2 = parseInt(0);
  	}else {
- 		var tdc2 = parseInt(document.getElementById("dlr").value);	
+ 		var tdc2 = parseInt(document.getElementById("dlr").value);
  	}
 
  	if (document.getElementById("adcp").value === NaN) {
  		var tdc3 = parseInt(0);
  	}else {
- 		var tdc3 = parseInt(document.getElementById("adcp").value);	
- 	}	 	
+ 		var tdc3 = parseInt(document.getElementById("adcp").value);
+ 	}
 
  	if (document.getElementById("vendor_funding").value === "") {
  		var tdc4 = parseInt(0);
@@ -135,8 +143,8 @@ function totalDirectCost(){
  		var tdc4 = parseInt(document.getElementById("vendor_funding").value);
  	}
 
- 	var totaldc = tdc1 + tdc2 + tdc3 + tdc4; 	
- 	document.getElementById("tdc").value=totaldc;	 	
+ 	var totaldc = tdc1 + tdc2 + tdc3 + tdc4;
+ 	document.getElementById("tdc").value=totaldc;
  }
 
 function tdcPercent(){
@@ -157,7 +165,7 @@ function contribMargin(){
 
 	var cont_mar= parseInt(cm1)-parseInt(cm2);
 	document.getElementById("cont_mar").value=cont_mar;
-	
+
 }
 
 function contribMarPer(){
@@ -166,7 +174,7 @@ function contribMarPer(){
 
 	var cmp_tot = (cmp2/cmp1)*100;
 	document.getElementById("contribMarPer").value=parseFloat(cmp_tot).toFixed(1);
-	
+
 }
 
 /********************************
@@ -178,15 +186,15 @@ document.getElementById("fcaPer").onkeyup = function () {
 };
 
 function fixedCA(){
-	
-	var fca2= (document.getElementById("fcaPer").value)/100;	
-		
+
+	var fca2= (document.getElementById("fcaPer").value)/100;
+
 	var fca1 = document.getElementById("sales_revenue").value;
 
 	var fixedCA = fca1*fca2;
 
 	document.getElementById("fca").value= parseInt(fixedCA);
-	 
+
 	poi();
 	poiPer();
 }
@@ -201,7 +209,7 @@ function poi(){
 	var poiTot = poi1 - poi2;
 
 	document.getElementById("poi").value = parseInt(poiTot);
-	
+
 }
 
 function poiPer(){
@@ -211,12 +219,12 @@ function poiPer(){
 	var poiPerTot = ((parseInt(poiPer1)) / (parseInt(poiPer2)))*100;
 
 	document.getElementById("poiPer").value = parseFloat(poiPerTot).toFixed(1);
-	
+
 }
 
 
 /********************************
-    DPO - DIO - DSO - WCD 
+    DPO - DIO - DSO - WCD
 *********************************/
 document.getElementById("dpo").onkeyup = function () {
 	wcd()
@@ -243,7 +251,7 @@ function wcd(){
 	roic()
 	roicProxi()
 	gmroi()
-	gmrowc() 
+	gmrowc()
 }
 
 
@@ -259,9 +267,9 @@ function acc_pay(){
 	accTot = ((acc1 - acc2)/360)* acc3;
 
 	// if (accTot < 0 ){
-	
+
 	document.getElementById("acc_pay").value = "-" + parseInt(accTot);
-	
+
 	// }
 }
 
