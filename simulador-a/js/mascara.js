@@ -6,7 +6,7 @@ $(function(){
 	    var temp = '';
 	    var long = texto.length;
 	    for (j=0; j<long; j++) {
-	        if (texto[j] == buscar) 
+	        if (texto[j] == buscar)
 	        {
 	            temp += nuevo;
 	        } else
@@ -17,13 +17,13 @@ $(function(){
 
 	//----------------------------------------------------------------
 	$("#sales_revenue_mask").mask('000.000.000.000.000', {reverse: true});
-		
+
 
 	$('#sales_revenue_mask').keyup(function(event) {
-		
+
 		var val_sales_revenue = $(this).val();
-		
-		$('#sales_revenue').val(remplazar (val_sales_revenue, ".", ""))		
+
+		$('#sales_revenue').val(remplazar (val_sales_revenue, ".", ""))
 
 		frontMargin();
 		backMargin();
@@ -32,4 +32,18 @@ $(function(){
 
 	//resultado_mask
 	//https://code.google.com/archive/p/jquery-formatcurrency/wikis/Usage.wiki
+
+	$("#dcr_mask").mask('000.000.000.000.000', {reverse: true});
+
+	$("#dcr_mask").keyup(function(){
+		//$(this).formatCurrency({roundToDecimalPlace:0,symbol:'',digitGroupSymbol:'.'});
+		var val_dcr = $(this).val();
+
+		$('#dcr').val(remplazar (val_dcr, ".", ""))
+
+		addCostPP();
+
+	});
+
+
 });

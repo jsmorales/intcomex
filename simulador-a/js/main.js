@@ -77,6 +77,7 @@ function sumPercent() {
 // TOTAL DIRECT COST
 *******************************/
 document.getElementById("dcr").onkeyup = function () {
+	
 	addCostPP();
 
 };
