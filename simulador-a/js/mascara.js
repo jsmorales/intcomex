@@ -45,5 +45,29 @@ $(function(){
 
 	});
 
+	$("#dlr_mask").mask('000.000.000.000.000', {reverse: true});
+
+	$("#dlr_mask").keyup(function(){
+		//$(this).formatCurrency({roundToDecimalPlace:0,symbol:'',digitGroupSymbol:'.'});
+		var val_dlr = $(this).val();
+
+		$('#dlr').val(remplazar (val_dlr, ".", ""))
+
+		addCostPP();
+
+	});
+
+	$("#vendor_funding_mask").mask('000.000.000.000.000', {reverse: true});
+
+	$("#vendor_funding_mask").keyup(function(){
+		//$(this).formatCurrency({roundToDecimalPlace:0,symbol:'',digitGroupSymbol:'.'});
+		var val_vendor = $(this).val();
+
+		$('#vendor_funding').val(remplazar (val_vendor, ".", ""))
+
+		addCostPP();
+
+	});
+
 
 });

@@ -100,27 +100,38 @@
             <h2 class="card-title text-center">Costos</h2>
             <tr>
               <td>Recursos Corporativos Dedicados(PMs) Salario Completo</td>
-              <td colspan="2">$ <input type="text" id="dcr" style="width: 96%"><br>
+              <td colspan="2"><input type="text" id="dcr" style="width: 96%" hidden>
               $ <input type="text" id="dcr_mask" style="width: 96%"></td>
             </tr>
             <tr>
               <td>Recursos Locales Dedicados (PMs) Salario Completo</td>
-              <td colspan="2">$ <input type="number" id="dlr" style="width: 96%"></td>
+              <td colspan="2">
+                  <input type="text" id="dlr" style="width: 96%" hidden>
+                $ <input type="text" id="dlr_mask" style="width: 96%">
+              </td>
             </tr>
             <tr>
               <td>Costos Directos Adicionales por Personal (%)</td>
-              <td>$ <input type="number" id="adcp" disabled style="width: 88%"></td>
+              <td>
+                  <input type="text" id="adcp" disabled style="width: 88%" hidden>
+                $ <input type="text" id="adcp_mask" disabled style="width: 88%">
+              </td>
               <td>% <input type="number" id="adcp_percentage" style="width: 88%"></td>
             </tr>
             <tr>
               <td>Vendor Funding <br> <span style="font-size:10px;">(Agregue un Valor Negativo)</span></td>
-              <td colspan="2">$ <input type="number" id="vendor_funding" style="width:96%; "></td>
+              <td colspan="2">
+                  <input type="text" id="vendor_funding" style="width:96%; " hidden>
+                $ <input type="text" id="vendor_funding_mask" style="width:96%; ">
+              </td>
             </tr>
             <tr>
               <td class="d-title">Total</td>
               <td>
-              <label for=""> Costos Directos</label><br>
-              $ <input type="number" id="tdc" disabled style="max-width:88%"></td>
+                <label for=""> Costos Directos</label><br>
+                  <input type="text" id="tdc" disabled style="max-width:88%" hidden>
+                $ <input type="text" id="tdc_mask" disabled style="max-width:88%">
+              </td>
               <td>
               <label for=""> En % sobre Venta</label><br>
               % <input type="number" id="tdcPercent" disabled style="max-width:88%"></td>
@@ -136,11 +147,14 @@
                 <tr>
                   <td class="tb-title" style="vertical-align: middle;">Contribución</td>
                   <td>
-                  <label for=""> Utilidad</label><br>
-                  $ <input type="number" id="cont_mar" disabled style="margin-top:7px;width: 88%"></td>
+                    <label for=""> Utilidad</label><br>
+                      <input type="text" id="cont_mar" disabled style="margin-top:7px;width: 88%" hidden>
+                    $ <input type="text" id="cont_mar_mask" disabled style="margin-top:7px;width: 88%">
+                  </td>
                   <td>
-                  <label for=""> Margen Contribución</label><br>
-                  % <input type="number" id="contribMarPer" disabled style="margin-top:7px;width: 88%"></td>
+                    <label for=""> Margen Contribución</label><br>
+                    % <input type="number" id="contribMarPer" disabled style="margin-top:7px;width: 88%">
+                  </td>
                 </tr>
 
             </table>
@@ -150,11 +164,13 @@
               <tr>
                 <td class="tb-title">Costos Fijos Asignados</td>
                 <td>
-                <label for="">Costos Fijos</label><br>
-                $ <input type="number" id="fca" disabled style="margin-top:14px;width:88%""></td>
+                  <label for="">Costos Fijos</label><br>
+                    <input type="text" id="fca" disabled style="margin-top:14px;width:88%" hidden>
+                  $ <input type="text" id="fca_mask" disabled style="margin-top:14px;width:88%">
+                </td>
                 <td>
                 <label for="">% Sobre Venta</label><br>
-                % <input type="number" id="fcaPer" style="margin-top:14px;width:88%""></td>
+                % <input type="number" id="fcaPer" style="margin-top:14px;width:88%"></td>
               </tr>
             </table>
           </div>
@@ -162,7 +178,10 @@
             <table class="table">
               <tr>
                 <td class="tb-title">Proforma Operating Income</td>
-                <td>$ <input type="number" id="poi" disabled style="margin-top:14px;width:88%""></td>
+                <td>
+                    <input type="text" id="poi" disabled style="margin-top:14px;width:88%" hidden>
+                  $ <input type="text" id="poi_mask" disabled style="margin-top:14px;width:88%">
+                </td>
                 <td>% <input type="number" id="poiPer" disabled style="margin-top:14px;width:89%"></td>
               </tr>
             </table>
@@ -200,23 +219,35 @@
                 <td>
                   <a data-container="body" data-toggle="popover" data-trigger="hover" data-placement="right" data-html="true" data-content="<div style='font-size: 12px;text-align:center'><span style='text-decoration:underline; padding-bottom:5px;'>Ingresos - Front-End  </span> * DPO<br/> 360</div>" style="color: #9f2428;">Cuentas por Pagar</a>
                 </td>
-                <td>$ <input type="number" id="acc_pay" disabled></td>
+                <td>
+                    <input type="text" id="acc_pay" disabled hidden>
+                  $ <input type="text" id="acc_pay_mask" disabled>
+                </td>
               </tr>
               <tr>
                 <td>
                   <a data-container="body" data-toggle="popover" data-trigger="hover" data-placement="right" data-html="true" data-content="<div style='font-size: 12px;text-align:center'><span style='text-decoration:underline; padding-bottom:5px;'>Ingresos - Utilidad Bruta  </span> * DIO<br/> 360</div>" style="color: #9f2428;">Días de Inventario</a>
                 </td>
-                <td>$ <input type="number" id="inv" disabled></td>
+                <td>
+                    <input type="text" id="inv" disabled hidden>
+                  $ <input type="text" id="inv_mask" disabled>
+                </td>
               </tr>
               <tr>
                 <td>
                   <a data-container="body" data-toggle="popover" data-trigger="hover" data-placement="right" data-html="true" data-content="<div style='font-size: 12px;text-align:center'><span style='text-decoration:underline; padding-bottom:5px;'>Ingresos de Ventas</span> * DSO<br/> 360</div>" style="color:#9f2428;">Cuentas por Cobrar</a>
                 </td>
-                <td>$ <input type="number" id="acc_rec" disabled></td>
+                <td>
+                    <input type="text" id="acc_rec" disabled hidden>
+                  $ <input type="text" id="acc_rec_mask" disabled>
+                </td>
               </tr>
               <tr>
                 <td>Promedio Capital de Trabajo</td>
-                <td>$ <input type="number" id="av_inv_cap" disabled></td>
+                <td>
+                    <input type="text" id="av_inv_cap" disabled hidden>
+                  $ <input type="text" id="av_inv_cap_mask" disabled>
+                </td>
               </tr>
             </table>
           </tbody>
@@ -229,7 +260,10 @@
              <table class="table">
               <tr>
                 <td class="tb-title">Impuestos</td>
-                <td>$ <input type="number" id="taxes" disabled style="width: 130px;"></td>
+                <td>
+                    <input type="text" id="taxes" disabled style="width: 130px;" hidden>
+                  $ <input type="text" id="taxes_mask" disabled style="width: 130px;">
+                </td>
                 <td>% <input type="number" id="taxes_per" style="max-width: 50px;"></td>
               </tr>
               </table>
@@ -242,7 +276,10 @@
                   Proforma NOPAT
                 </a>
               </td>
-              <td colspan="2">$ <input type="number" id="pro" disabled></td>
+              <td colspan="2">
+                  <input type="text" id="pro" disabled hidden>
+                $ <input type="text" id="pro_mask" disabled>
+              </td>
               </tr>
               </table>
           </div>

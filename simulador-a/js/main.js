@@ -84,6 +84,7 @@ document.getElementById("dcr").onkeyup = function () {
 
 document.getElementById("dlr").onkeyup = addCostPP;
 document.getElementById("adcp_percentage").onkeyup = addCostPP;
+
 function addCostPP() {
 	if (document.getElementById("dcr").value == "") {
 		var dcr = 0;
@@ -106,7 +107,12 @@ function addCostPP() {
 	}
 
 	var dtotal = d1*d2;
+	//-------------------------------------------
 	document.getElementById("adcp").value=dtotal;
+	//mascara
+	$("#adcp_mask").val(dtotal);
+	$("#adcp_mask").formatCurrency({roundToDecimalPlace:0,symbol:'',digitGroupSymbol:'.'});
+	//-------------------------------------------
 
 	totalDirectCost();
 	tdcPercent();
@@ -118,6 +124,7 @@ function addCostPP() {
 
 
 document.getElementById("vendor_funding").onkeyup = addCostPP;
+
 function totalDirectCost(){
 
 	if (document.getElementById("dcr").value === "") {
@@ -146,6 +153,10 @@ function totalDirectCost(){
 
  	var totaldc = tdc1 + tdc2 + tdc3 + tdc4;
  	document.getElementById("tdc").value=totaldc;
+ 	//mascara
+	$("#tdc_mask").val(totaldc);
+	$("#tdc_mask").formatCurrency({roundToDecimalPlace:0,symbol:'',digitGroupSymbol:'.'});
+	//-------------------------------------------
  }
 
 function tdcPercent(){
@@ -166,6 +177,10 @@ function contribMargin(){
 
 	var cont_mar= parseInt(cm1)-parseInt(cm2);
 	document.getElementById("cont_mar").value=cont_mar;
+	//mascara
+	$("#cont_mar_mask").val(cont_mar);
+	$("#cont_mar_mask").formatCurrency({roundToDecimalPlace:0,symbol:'',digitGroupSymbol:'.'});
+	//-------------------------------------------
 
 }
 
@@ -195,6 +210,10 @@ function fixedCA(){
 	var fixedCA = fca1*fca2;
 
 	document.getElementById("fca").value= parseInt(fixedCA);
+	//mascara
+	$("#fca_mask").val(parseInt(fixedCA));
+	$("#fca_mask").formatCurrency({roundToDecimalPlace:0,symbol:'',digitGroupSymbol:'.'});
+	//-------------------------------------------
 
 	poi();
 	poiPer();
@@ -211,6 +230,10 @@ function poi(){
 
 	document.getElementById("poi").value = parseInt(poiTot);
 
+	//mascara
+	$("#poi_mask").val(parseInt(poiTot));
+	$("#poi_mask").formatCurrency({roundToDecimalPlace:0,symbol:'',digitGroupSymbol:'.'});
+	//-------------------------------------------
 }
 
 function poiPer(){
@@ -270,7 +293,10 @@ function acc_pay(){
 	// if (accTot < 0 ){
 
 	document.getElementById("acc_pay").value = "-" + parseInt(accTot);
-
+	//mascara
+	$("#acc_pay_mask").val("-" + parseInt(accTot));
+	$("#acc_pay_mask").formatCurrency({roundToDecimalPlace:0,symbol:'',digitGroupSymbol:'.'});
+	//-------------------------------------------
 	// }
 }
 
@@ -286,6 +312,10 @@ function inventory(){
 	var invTot = ((inv1 - inv2)/360)* (inv3);
 
 	document.getElementById("inv").value = parseInt(invTot).toFixed();
+	//mascara
+	$("#inv_mask").val(parseInt(invTot).toFixed());
+	$("#inv_mask").formatCurrency({roundToDecimalPlace:0,symbol:'',digitGroupSymbol:'.'});
+	//-------------------------------------------
 
 }
 
@@ -299,6 +329,10 @@ function acc_rec(){
 	var arTot = (parseInt(ar1)/parseInt(360))*parseInt(ar2);
 
 	document.getElementById("acc_rec").value = parseInt(arTot).toFixed();
+	//mascara
+	$("#acc_rec_mask").val(parseInt(arTot).toFixed());
+	$("#acc_rec_mask").formatCurrency({roundToDecimalPlace:0,symbol:'',digitGroupSymbol:'.'});
+	//-------------------------------------------
 }
 
 /********************************
@@ -312,6 +346,10 @@ function aic(){
 	var aicTot = parseInt(aic1) + parseInt(aic2) + parseInt(aic3);
 
 	document.getElementById("av_inv_cap").value = aicTot.toFixed();
+	//mascara
+	$("#av_inv_cap_mask").val(aicTot.toFixed());
+	$("#av_inv_cap_mask").formatCurrency({roundToDecimalPlace:0,symbol:'',digitGroupSymbol:'.'});
+	//-------------------------------------------
 }
 
 
@@ -327,6 +365,10 @@ function taxes(){
 	var taxTot = (parseInt(tax1) * parseInt(tax2))/100;
 
 	document.getElementById("taxes").value = parseInt(taxTot);
+	//mascara
+	$("#taxes_mask").val(parseInt(taxTot));
+	$("#taxes_mask").formatCurrency({roundToDecimalPlace:0,symbol:'',digitGroupSymbol:'.'});
+	//-------------------------------------------
 }
 
 /********************************
@@ -340,7 +382,10 @@ function proforma() {
 	 var proTot= pro1 - pro2;
 
 	 document.getElementById("pro").value = parseInt(proTot);
-
+	 //mascara
+	$("#pro_mask").val(parseInt(proTot));
+	$("#pro_mask").formatCurrency({roundToDecimalPlace:0,symbol:'',digitGroupSymbol:'.'});
+	//-------------------------------------------
 }
 
 
