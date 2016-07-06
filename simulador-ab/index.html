@@ -40,13 +40,18 @@
             <h2 class="card-title text-center">VENTAS - MARGEN</h2>            
               <tr>
                 <td>Ingresos de Ventas</td>
-                <td colspan="2">$ <input type="number" id="sales_revenue" style="width: 95%"></td>
+                <td colspan="2">
+                    <input type="text" id="sales_revenue" style="width: 95%" hidden>
+                  $ <input type="text" id="sales_revenue_mask" style="width: 95%">
+                </td>
               </tr>
               <tr>  
                 <td>Front-End</td>
                 <td>
-                <label for=""> Utilidad FE</label><br>
-                $ <input type="number" id="resultado" disabled style="width: 80%"></td>
+                  <label for=""> Utilidad FE</label><br>
+                    <input type="text" id="resultado" disabled style="width: 80%" hidden>
+                  $ <input type="text" id="resultado_mask" disabled style="width: 80%">
+                </td>
                 <td>
                 <label for=""> Margen FE</label><br>
                 % <input type="number" id="fmp" style="width: 88%"></td>
@@ -54,8 +59,10 @@
               <tr>
                 <td>Back-End</td>
                 <td>
-                <label for=""> Utilidad BE</label><br>
-                $ <input type="number" id="resultado_bk" disabled style="width: 88%"></td>
+                  <label for=""> Utilidad BE</label><br>
+                    <input type="text" id="resultado_bk" disabled style="width: 88%" hidden>
+                  $ <input type="text" id="resultado_bk_mask" disabled style="width: 88%">
+                </td>
                 <td>
                 <label for=""> Margen BE</label><br>
                  % <input type="number" id="backend-margin"  style="width: 88%"></td>
@@ -63,8 +70,10 @@
               <tr>
                 <td class="d-title">TOTAL</td>
                 <td>
-                <label for=""> Utilidad Bruta</label><br>
-                $ <input type="number" id="res_tot" disabled style="width: 88%"></td>
+                  <label for=""> Utilidad Bruta</label><br>
+                    <input type="text" id="res_tot" disabled style="width: 88%" hidden>
+                  $ <input type="text" id="res_tot_mask" disabled style="width: 88%">
+                </td>
                 <td>
                 <label for=""> Margen Bruto</label><br>
                 % <input type="number" id="resultado_per" disabled style="width: 88%"></td>
@@ -143,10 +152,10 @@
                 <td class="tb-title">Costos Fijos Asignados</td>
                 <td>
                 <label for="">Costos Fijos</label><br>
-                $ <input type="number" id="fca" disabled style="margin-top:14px;width:88%""></td>
+                $ <input type="number" id="fca" disabled style="margin-top:14px;width:88%"></td>
                 <td>
                 <label for="">% Sobre Venta</label><br>
-                % <input type="number" id="fcaPer" style="margin-top:14px;width:88%""></td>
+                % <input type="number" id="fcaPer" style="margin-top:14px;width:88%"></td>
               </tr>
             </table>
           </div>
@@ -154,7 +163,7 @@
             <table class="table">
               <tr>
                 <td class="tb-title">Proforma Operating Income</td>
-                <td>$ <input type="number" id="poi" disabled style="margin-top:14px;width:88%""></td>
+                <td>$ <input type="number" id="poi" disabled style="margin-top:14px;width:88%"></td>
                 <td>% <input type="number" id="poiPer" disabled style="margin-top:14px;width:89%"></td>
               </tr>      
             </table>
@@ -192,23 +201,35 @@
                 <td>
                   <a data-container="body" data-toggle="popover" data-trigger="hover" data-placement="right" data-html="true" data-content="<div style='font-size: 12px;text-align:center'><span style='text-decoration:underline; padding-bottom:5px;'>Ingresos - Front-End  </span> * DPO<br/> 360</div>" style="color: #9f2428;">Cuentas por Pagar</a>
                 </td>
-                <td>$ <input type="number" id="acc_pay" disabled></td>
+                <td>
+                    <input type="text" id="acc_pay" disabled hidden>
+                  $ <input type="text" id="acc_pay_mask" disabled>
+                </td>
               </tr>
               <tr>
                 <td>
                   <a data-container="body" data-toggle="popover" data-trigger="hover" data-placement="right" data-html="true" data-content="<div style='font-size: 12px;text-align:center'><span style='text-decoration:underline; padding-bottom:5px;'>Ingresos - Utilidad Bruta  </span> * DIO<br/> 360</div>" style="color: #9f2428;">Días de Inventario</a>
                 </td>
-                <td>$ <input type="number" id="inv" disabled></td>
+                <td>
+                    <input type="text" id="inv" disabled hidden> 
+                  $ <input type="text" id="inv_mask" disabled>
+                </td>
               </tr>
               <tr>
                 <td>
                   <a data-container="body" data-toggle="popover" data-trigger="hover" data-placement="right" data-html="true" data-content="<div style='font-size: 12px;text-align:center'><span style='text-decoration:underline; padding-bottom:5px;'>Ingresos de Ventas</span> * DSO<br/> 360</div>" style="color:#9f2428;">Cuentas por Cobrar</a>
                 </td>
-                <td>$ <input type="number" id="acc_rec" disabled></td>
+                <td>
+                    <input type="text" id="acc_rec" disabled hidden>
+                  $ <input type="text" id="acc_rec_mask" disabled>
+                </td>
               </tr>
               <tr>
                 <td>Promedio Capital de Trabajo</td>
-                <td>$ <input type="number" id="av_inv_cap" disabled></td>
+                <td>
+                    <input type="text" id="av_inv_cap" disabled hidden>
+                  $ <input type="text" id="av_inv_cap_mask" disabled>
+                </td>
               </tr>
             </table>
           </tbody>
@@ -337,6 +358,9 @@
     <script src="js/bootstrap.min.js"></script>
     <script src="js/main.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/numeral.js/1.4.5/numeral.min.js"></script>
+    <script src="js/mascara.js"></script>
+    <script src="../js/jquery.mask.js"></script>
+    <script src="../js/jquery.formatCurrency-1.4.0.min.js"></script>
     <script>
       $(function () {
         $('[data-toggle="popover"]').popover({title: 'Fórmula:', trigger: 'hover'})

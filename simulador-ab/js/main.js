@@ -12,6 +12,10 @@ function frontMargin () {
 	
 	var r1= f1*f2;
 	document.getElementById("resultado").value=r1.toFixed();
+	//mascara
+	$("#resultado_mask").val(r1.toFixed());
+	$("#resultado_mask").formatCurrency({roundToDecimalPlace:0,symbol:'',digitGroupSymbol:'.'});
+	//-------------------------------------------
 	grossProfit();	
 	sumPercent();
 }
@@ -23,6 +27,10 @@ function backMargin(){
 
 	var r2= b1*b2;
 	document.getElementById("resultado_bk").value=r2.toFixed();
+	//mascara
+	$("#resultado_bk_mask").val(r2.toFixed());
+	$("#resultado_bk_mask").formatCurrency({roundToDecimalPlace:0,symbol:'',digitGroupSymbol:'.'});
+	//-------------------------------------------
 	grossProfit();	
 	sumPercent();
 }
@@ -38,7 +46,11 @@ function grossProfit() {
 		var res_tot= (parseInt(c1)+parseInt(c2));
 
 	}
-	document.getElementById("res_tot").value=res_tot;	
+	document.getElementById("res_tot").value=res_tot;
+	//mascara
+	$("#res_tot_mask").val(res_tot);
+	$("#res_tot_mask").formatCurrency({roundToDecimalPlace:0,symbol:'',digitGroupSymbol:'.'});
+	//-------------------------------------------	
 }
 
 function sumPercent() {
@@ -254,6 +266,10 @@ function acc_pay(){
 	// if (accTot < 0 ){
 	
 	document.getElementById("acc_pay").value = "-" + parseInt(accTot);
+	//mascara
+	$("#acc_pay_mask").val("-" + parseInt(accTot));
+	$("#acc_pay_mask").formatCurrency({roundToDecimalPlace:0,symbol:'',digitGroupSymbol:'.'});
+	//-------------------------------------------
 	
 	// }
 }
@@ -270,6 +286,10 @@ function inventory(){
 	var invTot = ((inv1 - inv2)/360)* (inv3);
 
 	document.getElementById("inv").value = parseInt(invTot).toFixed();
+	//mascara
+	$("#inv_mask").val(parseInt(invTot).toFixed());
+	$("#inv_mask").formatCurrency({roundToDecimalPlace:0,symbol:'',digitGroupSymbol:'.'});
+	//-------------------------------------------
 
 }
 
@@ -283,6 +303,10 @@ function acc_rec(){
 	var arTot = (parseInt(ar1)/parseInt(360))*parseInt(ar2);
 
 	document.getElementById("acc_rec").value = parseInt(arTot).toFixed();
+	//mascara
+	$("#acc_rec_mask").val(parseInt(arTot).toFixed());
+	$("#acc_rec_mask").formatCurrency({roundToDecimalPlace:0,symbol:'',digitGroupSymbol:'.'});
+	//-------------------------------------------
 }
 
 /********************************
@@ -296,6 +320,10 @@ function aic(){
 	var aicTot = parseInt(aic1) + parseInt(aic2) + parseInt(aic3);
 
 	document.getElementById("av_inv_cap").value = aicTot.toFixed();
+	//mascara
+	$("#av_inv_cap_mask").val(aicTot.toFixed());
+	$("#av_inv_cap_mask").formatCurrency({roundToDecimalPlace:0,symbol:'',digitGroupSymbol:'.'});
+	//-------------------------------------------
 }
 
 
