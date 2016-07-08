@@ -41,4 +41,12 @@ $(function(){
 		addCostPP();
 
 	});
+
+	$("#btn_reset").click(function(event) {
+		/* Act on the event */
+		console.log($("#frm_simab"))
+		$("#frm_simab")[0].reset();
+		return false;
+	});
+
 });

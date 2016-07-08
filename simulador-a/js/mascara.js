@@ -69,5 +69,12 @@ $(function(){
 
 	});
 
+	
 
+	$("#btn_reset").click(function(event) {
+		/* Act on the event */
+		console.log($("#frm_sima"))
+		$("#frm_sima")[0].reset();
+		return false;
+	});
 });
