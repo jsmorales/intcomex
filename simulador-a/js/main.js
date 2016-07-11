@@ -176,6 +176,11 @@ function contribMargin(){
 	var cm2= document.getElementById("tdc").value;
 
 	var cont_mar= parseInt(cm1)-parseInt(cm2);
+	
+ 	if (Number.isNaN(cont_mar)) {
+ 		var cont_mar = parseInt(0);
+ 	}
+
 	document.getElementById("cont_mar").value=cont_mar;
 	//mascara
 	$("#cont_mar_mask").val(cont_mar);
@@ -228,6 +233,10 @@ function poi(){
 
 	var poiTot = poi1 - poi2;
 
+	if (Number.isNaN(poiTot)) {
+ 		var poiTot = parseInt(0);
+ 	}
+
 	document.getElementById("poi").value = parseInt(poiTot);
 
 	//mascara
@@ -264,6 +273,10 @@ function wcd(){
 
 	var wcdTot = (parseInt(wcd2) + parseInt(wcd3)) - (parseInt(wcd1));
 
+	if (Number.isNaN(wcdTot)) {
+ 		var wcdTot = parseInt(0);
+ 	}
+
 	document.getElementById("wcd").value = parseInt(wcdTot).toFixed();
 
 	acc_pay();
@@ -290,7 +303,7 @@ function acc_pay(){
 
 	accTot = ((acc1 - acc2)/360)* acc3;
 
-	// if (accTot < 0 ){
+	// if (accTot < 0 ){		
 
 	document.getElementById("acc_pay").value = "-" + parseInt(accTot);
 	//mascara
@@ -328,6 +341,10 @@ function acc_rec(){
 
 	var arTot = (parseInt(ar1)/parseInt(360))*parseInt(ar2);
 
+	if (Number.isNaN(arTot)) {
+ 		var arTot = parseInt(0);
+ 	}
+
 	document.getElementById("acc_rec").value = parseInt(arTot).toFixed();
 	//mascara
 	$("#acc_rec_mask").val(parseInt(arTot).toFixed());
@@ -363,6 +380,10 @@ function taxes(){
 	var tax2 = (document.getElementById("taxes_per").value);
 
 	var taxTot = (parseInt(tax1) * parseInt(tax2))/100;
+
+	if (Number.isNaN(taxTot)) {
+ 		var taxTot = parseInt(0);
+ 	}
 
 	document.getElementById("taxes").value = parseInt(taxTot);
 	//mascara

@@ -63,7 +63,7 @@ $(function(){
 		//$(this).formatCurrency({roundToDecimalPlace:0,symbol:'',digitGroupSymbol:'.'});
 		var val_vendor = $(this).val();
 
-		$('#vendor_funding').val(remplazar (val_vendor, ".", ""))
+		$('#vendor_funding').val('-'+remplazar (val_vendor, ".", ""))
 
 		addCostPP();
 
